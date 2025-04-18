@@ -1,0 +1,42 @@
+# Bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments (if created locally)
+.venv/
+env/
+venv/
+
+# Poetry
+
+# VS Code and IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test and coverage files
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+.cache/
+.pytest_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Jupyter notebooks (optional)
+.ipynb_checkpoints/
+
+# dotenv files (if you use secrets locally)
+.env
+.env.*
