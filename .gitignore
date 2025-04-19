@@ -40,3 +40,4 @@ dist/
 # dotenv files (if you use secrets locally)
 .env
 .env.*
+.qodo
