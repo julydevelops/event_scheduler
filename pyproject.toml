@@ -1,22 +1,45 @@
-[project]
+[tool.poetry]
 name = "event-scheduler"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Julio Guereca",email = "guereca.julio@gmail.com"}
-]
+authors = ["Julio Guereca <guereca.julio@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-]
+packages = [{ include = "event_scheduler", from = "src" }]
 
-[tool.poetry]
-packages = [{include = "event_scheduler", from = "src"}]
+[tool.poetry.scripts]
+testcov = "pytest:main"
 
+[tool.poetry.dependencies]
+python = ">=3.13"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
+black = "^25.1.0"
+isort = "^6.0.1"
+flake8 = "^7.2.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
